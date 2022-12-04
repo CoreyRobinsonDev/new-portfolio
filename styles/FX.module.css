@@ -8,3 +8,16 @@
 .hover:hover {
   --d: 0%;
 }
+
+.double-hover {
+  padding: .3rem 0;
+  background:
+    linear-gradient(currentColor 0 0) bottom 0   left  0 /var(--d, 0) 1px no-repeat,
+    linear-gradient(currentColor 0 0) bottom 3px right 0 /var(--d, 0) 1px no-repeat;
+  transition:0.5s;
+
+}
+
+.double-hover:hover {
+  --d: 100%;
+}

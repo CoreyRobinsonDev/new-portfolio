@@ -5,7 +5,7 @@
   justify-content: center;
   color: var(--font-color);
   height: 100vh;
-  padding: 5rem;
+  padding: 5vh;
   background-color: black;
 }
 .container::before {
@@ -20,9 +20,18 @@
   filter: blur(4px);
 }
 
-.title, .name, .description, .link {
+.title, .name, .description, .link, .backdrop {
   z-index: 2;
 }
+
+.backdrop {
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  padding: 3rem;
+  width: fit-content;
+}
+
 
 .title {
   font-size: 3.5rem;
@@ -46,12 +55,10 @@
   border-radius: 50%;
   padding: .5rem;
   margin-right: 1rem;
-  background-color: var(--circle-bg);
-  color: var(--circle-fg);
+  transition: .5s;
 }
 
 .link {
-  --circle-fg: #eee;
   display: flex;
   align-items: center;
   font-size: 2.5rem;
@@ -59,7 +66,19 @@
   width: fit-content;
 }
 
-.link:hover {
-  --circle-bg: #eee;
-  --circle-fg: black;
+.link:hover .link__circle {
+  background-color: #eee;
+  color: black;
+}
+
+@media only screen and (max-width: 650px) { 
+  .title {
+    font-size: 1.4rem;
+  }
+  .name {
+    font-size: 4rem;
+  }
+  .description {
+    font-size: 2rem;
+  }
 }

@@ -28,6 +28,9 @@ button {
 	cursor: pointer;
 	outline: inherit;
 }
+li {
+	list-style-type: none;
+}
 
 :root {
 	--font-color: #fff;
