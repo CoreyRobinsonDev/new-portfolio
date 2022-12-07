@@ -68,7 +68,7 @@
 
 .link:hover .link__circle {
   background-color: #eee;
-  color: black;
+  color: var(--primary-color);
 }
 
 @media only screen and (max-width: 650px) { 
