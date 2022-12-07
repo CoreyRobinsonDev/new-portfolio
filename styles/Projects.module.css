@@ -1,0 +1,155 @@
+.header {
+  height: 20vh;
+  background-color: black;
+  background-image: url("../public/imgs/projects.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 10rem;
+}
+
+.container {
+  margin-bottom: 10rem;
+}
+
+.project {
+  margin: 0 auto;
+  width: 80vw;
+  border-top: 1px solid #eee;
+}
+
+.link {
+  cursor: pointer;
+}
+
+.link:hover .arrow > svg {
+  transform: rotate(0deg);
+}
+.link:hover .arrow, .link:hover .project__name {
+  opacity: 100%;
+}
+.link:hover .project__body {
+  padding-top: 2rem;
+}
+.link:hover .project__head {
+  border-bottom: 1px solid #eee;
+}
+
+.project__head, .project__body {
+  background: inherit;
+}
+
+.project__head {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid transparent;
+  transition: ease-out .5s;
+}
+
+.project__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  height: 0;
+  transition: ease-out .5s;
+}
+
+.arrow, .arrow > svg {
+  transition: 0.3s;
+}
+.arrow {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 5rem;
+  opacity: 50%;
+}
+.arrow > svg {
+  transform: rotate(-45deg);
+}
+
+
+.project__name {
+  font-size: 5rem;
+  opacity: 70%;
+  transition: ease-out .5s;
+}
+
+.tech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  opacity: 70%;
+}
+
+.tech__name {
+  font-size: 2rem;
+}
+
+.gif {
+  border-radius: 10px;
+}
+
+.project__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+}
+.description__info {
+  font-size: 3rem;
+}
+.description__feature__header {
+  font-weight: normal;
+  border-bottom: 1px solid #eee;
+}
+
+.description__feature__item {
+  font-size: 2rem;
+  list-style-type: circle;
+}
+
+.description__link__container {
+  display: flex;
+  gap: 2rem;
+}
+
+.description__link {
+  display: grid;
+  place-items: center;
+  width: fit-content;
+  font-size: 4rem;
+  color: white;
+  background: #333;
+  border-radius: 50%;
+  padding: .5rem;
+  transition: .5s;
+}
+
+.description__link:hover {
+  transform: translateY(-20%);
+}
+
+@media only screen and (max-width: 1500px) {
+  .project__body {
+    display: none;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .project__head {
+    grid-template-columns: 1fr 1fr;
+  }
+
+ 
+  
+  .project__name {
+    font-size: 4rem;
+  }
+
+  .tech {
+    display: none;
+  }
+}

@@ -36,6 +36,7 @@ const Footer = () => {
         <a className={styles.link__icon} href="https://twitter.com/corey_codes001" target="_blank" rel="noreferrer"><BsTwitter  /></a>
       </li>
     </ul>
+    <small className={styles.copyright}>&#169; corey-robinson.dev, All Rights Reserved. <a className={styles.code} href="https://github.com/CoreyRobinsonDev/new-portfolio" target="_blank" rel="noreferrer">{"<View Code>"}</a></small>
   </footer>
 }
 

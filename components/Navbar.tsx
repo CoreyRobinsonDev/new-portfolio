@@ -6,7 +6,7 @@ const Navbar = () => {
   return <nav className={styles.container}>
     <ul className={styles.list}>
       <li className={styles.list_item}><Link href="/" className={FX["double-hover"]}>Home</Link></li>
-      <li className={styles.list_item}><Link href="/" className={FX["double-hover"]}>Projects</Link></li>
+      <li className={styles.list_item}><Link href="/projects" className={FX["double-hover"]}>Projects</Link></li>
       <li className={styles.list_item}><Link href="/" className={FX["double-hover"]}>Skills</Link></li>
       <li className={styles.list_item}><Link href="#contact" className={FX["double-hover"]}>Contact</Link></li>
     </ul>
