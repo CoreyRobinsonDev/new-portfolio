@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Head from "next/head";
 
 import styles from "../styles/Skills.module.css";
 
@@ -85,7 +86,11 @@ function Card({icon, name}: {icon: string, name: string}) {
     setTextColor("black")
   }
 
-  return <motion.article className={styles.card} animate={{ backgroundColor: bgColor }} onMouseEnter={() => changeColor()} onMouseLeave={() => resetColor()}>
+  return <>
+    <Head>
+      <title>Corey Robinson | Skills</title>
+    </Head>
+  <motion.article className={styles.card} animate={{ backgroundColor: bgColor }} onMouseEnter={() => changeColor()} onMouseLeave={() => resetColor()}>
     <Image
       className={`${styles.img} ${styles[name]}`}
       src={icon}
@@ -95,5 +100,6 @@ function Card({icon, name}: {icon: string, name: string}) {
     />
     <motion.h2 className={styles.name} animate={{color: textColor}}>{name}</motion.h2>
   </motion.article>
+  </>
 }
 export default Skills;

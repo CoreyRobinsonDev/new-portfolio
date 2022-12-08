@@ -2,6 +2,7 @@ import { BsArrowRightShort,BsGlobe } from "react-icons/bs";
 import { TbBrandGithub } from "react-icons/tb";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import Head from "next/head";
 
 import styles from "../styles/Projects.module.css";
 
@@ -12,6 +13,9 @@ const Projects = () => {
   const chessHeightExpanded = 400;
 
   return <>
+    <Head>
+      <title>Corey Robinson | Projects</title>
+    </Head>
     <header className={styles.header}>
     </header>
     <section className={styles.container}>
@@ -37,7 +41,7 @@ const Projects = () => {
                   <li className={styles.description__feature__item}>Users can select photos based on the martian day they were taken.</li>
                 </ul>
                 <div className={styles.description__link__container}>
-                  <a className={styles.description__link} href="https://github.com/CoreyRobinsonDev/mars-gallery" target="_blank" rel="noreferrer"><TbBrandGithub/></a>
+                  <a className={styles.description__link} href="https://github.com/CoreyRobinsonDev/mars-gallery" target="_blank" rel="noreferrer" title="Github"><TbBrandGithub/></a>
                 <a className={styles.description__link} href="https://mars-gallery-crd.netlify.app/" target="_blank" rel="noreferrer"><BsGlobe/></a>
                 </div>
               </div>
@@ -66,7 +70,7 @@ const Projects = () => {
                   <li className={styles.description__feature__item}>Users can see the win rate of a chess opening by color.</li>
                 </ul>
                 <div className={styles.description__link__container}>
-                  <a className={styles.description__link} href="https://github.com/CoreyRobinsonDev/chess-openings" target="_blank" rel="noreferrer"><TbBrandGithub/></a>
+                  <a className={styles.description__link} href="https://github.com/CoreyRobinsonDev/chess-openings" target="_blank" rel="noreferrer" title="Github"><TbBrandGithub/></a>
                 <a className={styles.description__link} href="https://chess-openings-crd.netlify.app/" target="_blank" rel="noreferrer"><BsGlobe/></a>
                 </div>
               </div>

@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   color: var(--font-color);
-  height: 100vh;
+  height: 101vh;
   padding: 5vh;
   background-color: black;
 }
@@ -26,8 +26,8 @@
 
 .backdrop {
   background: rgba(255, 255, 255, 0.01);
-  border-radius: 16px;
-  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  backdrop-filter: blur(15px);
   padding: 3rem;
   width: fit-content;
 }
@@ -72,6 +72,9 @@
 }
 
 @media only screen and (max-width: 650px) { 
+  .container {
+    height: 110vh;
+  }
   .title {
     font-size: 1.4rem;
   }

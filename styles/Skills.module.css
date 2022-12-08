@@ -23,12 +23,12 @@
   background-color: #eee;
   padding: 5rem;
   min-width: 26rem;
-  border-radius: 30px;
+  border-radius: 5px;
 }
 
 .img {
   background-color: white;
-  border-radius: 50%;
+  border-radius: 5px;
   padding: 1rem;
   transition: ease-out .5s;
 }

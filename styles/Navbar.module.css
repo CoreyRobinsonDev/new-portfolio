@@ -1,24 +1,25 @@
 .container {
-  z-index: 2;
-  position: absolute;
-  top: 0; left: 0;
+  z-index: 3;
+  position: sticky;
+  top: 0;
   width: 100%;
-  margin: 2rem auto;
-  padding: 0 5vh;
+  margin: 0 auto;
+  margin-top: -14rem;
 }
+
 
 .list {
   display: flex;
+  z-index: 3;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 3rem;
   color: var(--font-color); 
   background: rgba(255, 255, 255, 0.01);
-  border-radius: 16px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(15px);
 }
 
 .list_item {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 
 .list_item:hover {
@@ -27,4 +28,21 @@
 
 .focus {
   color: #B06C6E;
+}
+
+.bar {
+  width: 20rem;
+  margin: 1rem 45vw;
+  border: 2px solid rgba(0,0,0, 0.7);
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 650px) { 
+  .list_item {
+    font-size: 2.2rem;
+  }
+
+  .list {
+    padding: 1rem;
+  }
 }
