@@ -24,3 +24,7 @@
 .list_item:hover {
   color: var(--primary-color);
 }
+
+.focus {
+  color: #B06C6E;
+}

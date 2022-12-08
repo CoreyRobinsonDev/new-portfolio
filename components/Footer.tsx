@@ -17,7 +17,7 @@ const Footer = () => {
           <p className={styles.link__username}>@coreycodes</p>
         </div>
        
-        <a className={styles.link__icon} href="https://www.linkedin.com/in/coreycodes/" target="_blank" rel="noreferrer"><RiLinkedinFill/></a>
+        <a className={styles.link__icon} href="https://www.linkedin.com/in/coreycodes/" target="_blank" rel="noreferrer" title="LinkedIn"><RiLinkedinFill/></a>
       </li>
       <li className={styles.links}>
         <div>
@@ -25,7 +25,7 @@ const Footer = () => {
           <p className={styles.link__username}>@coreyrobinsondev</p>
         </div>
         
-        <a className={styles.link__icon} href="https://github.com/CoreyRobinsonDev" target="_blank" rel="noreferrer"><TbBrandGithub/></a>
+        <a className={styles.link__icon} href="https://github.com/CoreyRobinsonDev" target="_blank" rel="noreferrer" title="Github"><TbBrandGithub/></a>
       </li>
       <li className={styles.links}>
         <div>
@@ -33,7 +33,7 @@ const Footer = () => {
           <p className={styles.link__username}>@corey_codes001</p>
         </div>
         
-        <a className={styles.link__icon} href="https://twitter.com/corey_codes001" target="_blank" rel="noreferrer"><BsTwitter  /></a>
+        <a className={styles.link__icon} href="https://twitter.com/corey_codes001" target="_blank" rel="noreferrer" title="Twitter"><BsTwitter/></a>
       </li>
     </ul>
     <small className={styles.copyright}>&#169; corey-robinson.dev, All Rights Reserved. <a className={styles.code} href="https://github.com/CoreyRobinsonDev/new-portfolio" target="_blank" rel="noreferrer">{"<View Code>"}</a></small>

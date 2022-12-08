@@ -12,7 +12,8 @@ const Projects = () => {
   const chessHeightExpanded = 400;
 
   return <>
-    <header className={styles.header}></header>
+    <header className={styles.header}>
+    </header>
     <section className={styles.container}>
       <ul className={styles.projects}>
         <li className={styles.project}>
