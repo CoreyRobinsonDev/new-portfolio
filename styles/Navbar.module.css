@@ -26,10 +26,6 @@
   color: var(--primary-color);
 }
 
-.focus {
-  color: #B06C6E;
-}
-
 .bar {
   width: 20rem;
   margin: 1rem 45vw;
