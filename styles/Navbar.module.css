@@ -10,16 +10,17 @@
 
 .list {
   display: flex;
+  gap: 1rem;
   z-index: 3;
   justify-content: space-evenly;
   padding: 3rem;
   color: var(--font-color); 
-  background: rgba(255, 255, 255, 0.01);
-  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px);
 }
 
 .list_item {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
 }
 
 .list_item:hover {
@@ -28,8 +29,8 @@
 
 .bar {
   width: 20rem;
-  margin: 1rem 45vw;
-  border: 2px solid rgba(0,0,0, 0.7);
+  margin: 1rem auto;
+  border: 2px solid rgba(255,255,255, 0.7);
   border-radius: 5px;
 }
 
@@ -38,7 +39,5 @@
     font-size: 2.2rem;
   }
 
-  .list {
-    padding: 1rem;
-  }
+
 }

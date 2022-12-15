@@ -13,7 +13,8 @@ const Navbar = () => {
 
   useEffect(() => {
     return scrollY.onChange((latest) => {
-      latest >= 100 ? setIsCollapsed(true) : setIsCollapsed(false);
+      latest >= 100 && window.screen.width > 850? setIsCollapsed(true) : setIsCollapsed(false);
+
       setY(latest)
     })
   }, [scrollY])
@@ -26,7 +27,7 @@ const Navbar = () => {
     : { y: -130, opacity: 0 };
   
   return <motion.nav className={`${styles.container}`} onMouseEnter={() => setIsCollapsed(false)} onMouseLeave={() => y >= 100 ? setIsCollapsed(true) : null}>
-    <motion.ul className={styles.list} animate={{color: y >= 100 ? "black" : "white"}}>
+    <motion.ul className={styles.list}>
       <motion.li className={styles.list_item} animate={animate}><Link href="/" className={FX["double-hover"]}>Home</Link></motion.li>
       <motion.li className={styles.list_item} animate={animate}><Link href="/projects" className={FX["double-hover"]}>Projects</Link></motion.li>
       <motion.li className={styles.list_item} animate={animate}><Link href="/skills" className={FX["double-hover"]}>Skills</Link></motion.li>
