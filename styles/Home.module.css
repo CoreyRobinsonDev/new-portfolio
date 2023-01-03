@@ -6,17 +6,19 @@
   color: var(--font-color);
   height: 101vh;
   padding: 5vh;
+  margin-left: 15rem;
   background-color: black;
 }
 .container::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100vw; height: 100%;
   background-image: url("../public/imgs/home.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-left: -16rem;
   filter: blur(4px);
 }
 
@@ -34,17 +36,17 @@
 
 
 .title {
-  font-size: 3.5rem;
+  font-size: clamp(1.4rem, 3.5vw, 4rem);
   line-height: 1rem;
 }
 
 .name {
-  font-size: 10rem;
+  font-size: clamp(6rem, 8vw, 10rem);
   padding: 1rem 0;
 }
 .description {
   max-width: 55ch;
-  font-size: 2.5rem;
+  font-size: clamp(2.2rem, 2.6vw, 3rem);
   opacity: 95%;
 }
 
@@ -70,18 +72,14 @@
   background-color: #eee;
   color: var(--primary-color);
 }
+@media only screen and (max-width: 1000px) { 
+  .container, .container::before {
+    margin-left: 0;
+  }
+}
 
 @media only screen and (max-width: 650px) { 
   .container {
     height: 110vh;
-  }
-  .title {
-    font-size: 1.4rem;
-  }
-  .name {
-    font-size: 4rem;
-  }
-  .description {
-    font-size: 2rem;
   }
 }

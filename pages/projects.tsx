@@ -6,81 +6,90 @@ import Head from "next/head";
 
 import styles from "../styles/Projects.module.css";
 
-const Projects = () => {
-  const [marsHeight, setMarsHeight] = useState(0);
-  const [chessHeight, setChessHeight] = useState(0);
-  const marsHeightExpanded = 350;
-  const chessHeightExpanded = 400;
+const projects = [
+  {
+    name: "Ecommerce",
+    tech: ["React", "Redux", "CSS", "NextJS"],
+    summary: "An ecommerce front-end shell.",
+    features: [
+      "3 clothing categories pages",
+      "Contact, about, and faq pages",
+      "Cart"
+    ],
+    site: "https://ecommerce-crd.vercel.app/",
+    code: "https://github.com/CoreyRobinsonDev/ecommerce",
+    gif: "/gifs/ecommerce.gif",
+  },
+  {
+    name: "Mars Gallery",
+    tech: ["React", "TypeScript", "Emotion"],
+    summary: "A web app designed to show and analyze a given chess position while providing top Masters games in that position.",
+    features: [
+      "Users can select and retrieve mission info on a given rover.",
+      "Users can select photos based on the martian day they were taken.",
+    ],
+    site: "https://mars-gallery-crd.netlify.app/",
+    code: "https://github.com/CoreyRobinsonDev/mars-gallery",
+    gif: "/gifs/mars-gallery-gif.gif",
+  },
+  {
+    name: "Chess Openings",
+    tech: ["React", "Redux", "CSS"],
+    summary: "A web app designed to show and analyze a given chess position while providing top Masters games in that position.",
+    features: [
+      "Users can find top Masters games from a given chess position.",
+      "Users can evaluate a given chess position.",
+      "Users can see the win rate of a chess opening by color."
+    ],
+    site: "https://chess-openings-crd.netlify.app/",
+    code: "https://github.com/CoreyRobinsonDev/chess-openings",
+    gif: "/gifs/chess-openings-gif.gif",
+  },
+]
 
+const Projects = () => {
   return <>
     <Head>
       <title>Corey Robinson | Projects</title>
     </Head>
-    <header className={styles.header}>
-    </header>
+    <header className={styles.header}></header>
     <section className={styles.container}>
       <ul className={styles.projects}>
-        <li className={styles.project}>
-          <motion.a className={styles.link} href="https://mars-gallery-crd.netlify.app/" target="_blank" rel="noreferrer" onMouseEnter={()=> setMarsHeight(marsHeightExpanded)} onMouseLeave={() => setMarsHeight(0)}>
-            <div className={styles.project__head}>
-              <h2 className={styles.project__name}>Mars Gallery</h2>
-              <ul className={styles.tech}>
-                <li className={styles.tech__name}>React</li>
-                <li className={styles.tech__name}>TypeScript</li>
-                <li className={styles.tech__name}>Emotion</li>
-              </ul>
-              <span className={styles.arrow}><BsArrowRightShort/></span>
-            </div>
-            <motion.div className={styles.project__body} animate={{height: marsHeight}}>
-              <embed className={styles.gif} src="/gifs/mars-gallery-gif.gif"></embed>
-              <div className={styles.project__description}>
-                <p className={styles.description__info}>{"A simple website for searching photos taken on Mars using NASA's Mars Rover Photos api."}</p>
-                <ul>
-                <h3 className={styles.description__feature__header}>Features</h3>
-                  <li className={styles.description__feature__item}>Users can select and retrieve mission info on a given rover.</li>
-                  <li className={styles.description__feature__item}>Users can select photos based on the martian day they were taken.</li>
-                </ul>
-                <div className={styles.description__link__container}>
-                  <a className={styles.description__link} href="https://github.com/CoreyRobinsonDev/mars-gallery" target="_blank" rel="noreferrer" title="Github"><TbBrandGithub/></a>
-                <a className={styles.description__link} href="https://mars-gallery-crd.netlify.app/" target="_blank" rel="noreferrer"><BsGlobe/></a>
-                </div>
-              </div>
-            </motion.div>
-          </motion.a>
-        </li>
-        <li className={styles.project}>
-          <motion.a className={styles.link} href="https://chess-openings-crd.netlify.app/" target="_blank" rel="noreferrer" onMouseEnter={()=> setChessHeight(chessHeightExpanded)} onMouseLeave={() => setChessHeight(0)}>
-            <div className={styles.project__head}>
-            <h2 className={styles.project__name}>Chess Openings</h2>
-            <ul className={styles.tech}>
-              <li className={styles.tech__name}>React</li>
-              <li className={styles.tech__name}>Redux</li>
-              <li className={styles.tech__name}>CSS</li>
-            </ul>
-            <span className={styles.arrow}><BsArrowRightShort/></span>
-          </div>
-            <motion.div className={styles.project__body} animate={{ height: chessHeight }}>
-              <embed className={styles.gif} src="/gifs/chess-openings-gif.gif"></embed>
-              <div className={styles.project__description}>
-                <p className={styles.description__info}>{"A web app designed to show and analyze a given chess position while providing top Masters games in that position."}</p>
-                <ul>
-                <h3 className={styles.description__feature__header}>Features</h3>
-                  <li className={styles.description__feature__item}>Users can find top Masters games from a given chess position.</li>
-                  <li className={styles.description__feature__item}>Users can evaluate a given chess position.</li>
-                  <li className={styles.description__feature__item}>Users can see the win rate of a chess opening by color.</li>
-                </ul>
-                <div className={styles.description__link__container}>
-                  <a className={styles.description__link} href="https://github.com/CoreyRobinsonDev/chess-openings" target="_blank" rel="noreferrer" title="Github"><TbBrandGithub/></a>
-                <a className={styles.description__link} href="https://chess-openings-crd.netlify.app/" target="_blank" rel="noreferrer"><BsGlobe/></a>
-                </div>
-              </div>
-              
-          </motion.div>
-          </motion.a>
-        </li>
+        {projects.map((project, i) => <Card key={i} {...project}/>)}
       </ul>
     </section>
   </>
+}
+
+function Card({ name, tech, summary, features, site, code, gif }
+  : { name: string, tech: string[], summary: string, features: string[], site: string, code: string, gif: string }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return <li className={styles.project}>
+    <motion.div className={styles.link} onMouseEnter={()=> setIsExpanded(true)} onMouseLeave={() => setIsExpanded(false)}>
+      <a className={styles.project__head} href={site} target="_blank" rel="noreferrer">
+        <h2 className={styles.project__name}>{name}</h2>
+      <ul className={styles.tech}>
+          {tech.map((name, i) => <li key={i} className={styles.tech__name}>{name}</li>)}
+      </ul>
+      <span className={styles.arrow}><BsArrowRightShort/></span>
+    </a>
+      <motion.div className={styles.project__body} transition={{type: "tween", duration: .5}} animate={isExpanded ? {height: "40rem"} : {height: 0}}>
+        <embed className={styles.gif} src={gif}></embed>
+        <div className={styles.project__description}>
+          <p className={styles.description__info}>{summary}</p>
+          <ul>
+          <h3 className={styles.description__feature__header}>Features</h3>
+            {features.map((description, i) => <li key={i} className={styles.description__feature__item}>{ description }</li>)} 
+          </ul>
+          <div className={styles.description__link__container}>
+            <a className={styles.description__link} href={code} target="_blank" rel="noreferrer" title="Github"><TbBrandGithub/></a>
+          <a className={styles.description__link} href={site} target="_blank" rel="noreferrer"><BsGlobe/></a>
+          </div>
+        </div>
+    </motion.div>
+    </motion.div>
+  </li>
 }
 
 export default Projects;

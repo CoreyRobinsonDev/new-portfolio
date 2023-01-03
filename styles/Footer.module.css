@@ -14,7 +14,7 @@
 
 .question {
   font-weight: normal;
-  font-size: 8rem;
+  font-size: clamp(5rem, 6vw, 8rem);
 }
 
 .question--bold {
@@ -90,15 +90,12 @@
 }
 
 @media only screen and (max-width: 650px) { 
-  .question {
-    font-size: 4rem;
-  }
-
   .links {
     display: grid;
     place-items: center;
     border: none;
     width:auto;
+    padding: 0;
   }
 
   .link__name, .link__username {
