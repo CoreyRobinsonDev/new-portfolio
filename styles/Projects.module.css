@@ -50,7 +50,8 @@
 }
 
 .project__body {
-  display: grid;
+  /* !important flag used to prevent framer motion override */
+  display: grid!important;
   grid-template-columns: clamp(40rem, 30vw, 100rem) 1fr;
   align-items: center;
   gap: 4rem;
@@ -104,7 +105,7 @@
   padding-bottom: 2rem;
 }
 .description__info {
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(2rem, 2.6vw, 3rem);
 }
 .description__feature__header {
   font-weight: normal;
@@ -112,7 +113,7 @@
 }
 
 .description__feature__item {
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
   list-style-type: circle;
 }
 
@@ -137,9 +138,10 @@
   transform: translateY(-20%);
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 1000px) {
   .project__body {
-    display: none;
+  /* !important flag used to prevent framer motion override */
+    display: none!important;
   }
 }
 

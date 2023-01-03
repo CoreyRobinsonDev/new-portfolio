@@ -74,7 +74,7 @@ function Card({ name, tech, summary, features, site, code, gif }
       </ul>
       <span className={styles.arrow}><BsArrowRightShort/></span>
     </a>
-      <motion.div className={styles.project__body} transition={{type: "tween", duration: .5}} animate={isExpanded ? {height: "40rem"} : {height: 0}}>
+      <motion.div className={styles.project__body} transition={{ type: "tween", duration: .5 }} animate={{ height: isExpanded ? "40rem" : 0}}>
         <embed className={styles.gif} src={gif}></embed>
         <div className={styles.project__description}>
           <p className={styles.description__info}>{summary}</p>
